@@ -1,0 +1,14 @@
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.9.2
+seaborn==0.13.2
+scikit-learn==1.7.0
+Pillow==10.4.0
+tqdm==4.66.5
+torch==2.7.1+cu118
+torchvision==0.22.1+cu118
+transformers==5.22.2
+accelerate==1.15.0
+safetensors==0.8.0
+joblib==1.4.2
+jupyterlab==4.2.5

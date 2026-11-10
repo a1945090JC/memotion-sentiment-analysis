@@ -1,0 +1,26 @@
+# Original dataset
+dataset/
+data/
+
+# Generated model outputs
+outputs/
+outputs_final/
+outputs_experiment*/
+
+# Model checkpoints and embeddings
+*.pt
+*.pth
+*.npy
+*.npz
+*.joblib
+
+# Python and Jupyter files
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Temporary files
+*.log
+.DS_Store
