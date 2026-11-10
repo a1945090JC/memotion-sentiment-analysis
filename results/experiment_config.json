@@ -1,0 +1,48 @@
+{
+  "dataset": "Memotion Dataset 7K (Kaggle: williamscott701/memotion-dataset-7k)",
+  "label_mapping": {
+    "very_negative": "negative",
+    "negative": "negative",
+    "neutral": "neutral",
+    "positive": "positive",
+    "very_positive": "positive"
+  },
+  "classes": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "seed": 42,
+  "num_examples_after_cleaning": 6965,
+  "split_counts": {
+    "train": 4875,
+    "val": 1045,
+    "test": 1045
+  },
+  "image_encoder": "torchvision ResNet-50 DEFAULT/ImageNet weights, frozen, 2048-dimensional features",
+  "text_encoder": "distilbert-base-uncased (frozen, masked mean pooled 768-dimensional features)",
+  "text_max_tokens": 128,
+  "image_feature_dim": 2048,
+  "text_feature_dim": 768,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0003,
+  "weight_decay": 0.005,
+  "hidden_layer_sizes": [
+    128,
+    32
+  ],
+  "dropout": 0.4,
+  "epoch_limit": 35,
+  "early_stopping_patience": 6,
+  "class_weighting": "square-root inverse-frequency cross entropy (training split)",
+  "late_fusion_image_weight": 0.0,
+  "best_validation_epochs": {
+    "Image-only": 12,
+    "Text-only": 16,
+    "Early fusion": 20
+  },
+  "device": "cuda",
+  "torch_version": "2.7.1+cu118",
+  "evaluation": "held-out single test set; macro F1 primary",
+  "warning": "head training times exclude encoder embedding computation and downloads"
+}
