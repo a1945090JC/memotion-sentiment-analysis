@@ -76,11 +76,28 @@ The dataset is not included in GitHub and must be downloaded separately.
 
 ### 3. Install dependencies
 
+Python 3.11 or newer is recommended.
+
 Open a terminal in the project folder and run:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
+
+The default installation can run the notebook on CPU.
+
+For NVIDIA GPU acceleration, install the matching
+CUDA-enabled PyTorch build using the official
+[PyTorch installation instructions](https://pytorch.org/get-started/previous-versions/).
+
+For PyTorch 2.7.1 with CUDA 11.8:
+
+```bash
+python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorch.org/whl/cu118
+```
+
+The notebook automatically selects CUDA when available.
+
 
 ### 4. Run the notebook
 
