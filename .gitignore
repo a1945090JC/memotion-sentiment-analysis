@@ -1,26 +1,22 @@
-# Original dataset
-dataset/
-data/
+# Dataset files (keep only the placeholder)
+dataset/*
+!dataset/.gitkeep
 
-# Generated model outputs
+# Generated outputs and cached embeddings
 outputs/
 outputs_final/
 outputs_experiment*/
 
-# Model checkpoints and embeddings
-*.pt
-*.pth
-*.npy
-*.npz
-*.joblib
-
-# Python and Jupyter files
+# Python
 __pycache__/
 .ipynb_checkpoints/
 .venv/
 venv/
 .env
 
-# Temporary files
-*.log
-.DS_Store
+# Large saved models and arrays
+*.pt
+*.pth
+*.npy
+*.npz
+*.joblib
