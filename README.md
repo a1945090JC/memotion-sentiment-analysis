@@ -44,17 +44,61 @@ Image-only achieved the highest test macro F1. Neither fusion approach consisten
 
 ## How to run
 
-1. Download the Memotion 7K dataset from Kaggle.
-2. Extract the dataset into a folder named `dataset` inside the project directory, keeping its original image and label files.
-3. Install the packages using `pip install -r requirements.txt`.
-4. Open `Memotion7K_Final.ipynb` in Jupyter.
-5. Run the cells in order.
+### 1. Download the project
 
-The notebook uses a GPU when CUDA is available, but can also run on CPU.
+Download this repository using **Code → Download ZIP** and extract it.
 
-Pretrained ResNet-50 and DistilBERT weights are downloaded on the first run. Image and text embeddings are cached locally to avoid repeated feature extraction.
+### 2. Download the dataset
 
-The generated results are saved in `outputs_final/`.
+Download the [Memotion Dataset 7K from Kaggle](https://www.kaggle.com/datasets/williamscott701/memotion-dataset-7k/data).
+
+Extract the dataset inside the `dataset` folder.
+
+The folder structure should be:
+
+```text
+memotion-sentiment-analysis/
+├── dataset/
+│   ├── .gitkeep
+│   └── memotion_dataset_7k/
+│       ├── labels.csv
+│       └── images/
+├── results/
+├── Memotion7K_Final_Cleaned.ipynb
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+The notebook searches the dataset folder and its subfolders for `labels.csv` and meme images.
+
+The dataset is not included in GitHub and must be downloaded separately.
+
+### 3. Install dependencies
+
+Open a terminal in the project folder and run:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Run the notebook
+
+Open `Memotion7K_Final_Cleaned.ipynb` in Jupyter Notebook or JupyterLab, with the project folder as the working directory.
+
+Select **Kernel → Restart Kernel and Run All Cells**.
+
+The notebook uses CUDA if available, otherwise CPU. Internet access is needed on the first run to download pretrained ResNet-50 and DistilBERT weights.
+
+### 5. Expected results
+
+After preprocessing, the notebook should retain 6,965 usable memes.
+
+New outputs are saved in `outputs_final/`. Embeddings are cached in `outputs/cache/`.
+
+The `results/` folder contains reference outputs from the original experiment.
+
+The random seed is 42. Minor variations in results may occur across different hardware and software environments.
 
 ## Limitations
 
